@@ -6,7 +6,9 @@ Team members will alternate responsibility for maintaining these records to ensu
 ## Weekly Records
 ### Week 1 (02-Oct-2025)
 **Agenda:**
-* content here
+* Potential datasets of interest: #11, #14, #18, #24
+* Brainstorm possible research questions and discuss with TA
+* Ensure all members have access to the team’s GitHub repository
 
 **Meeting Minutes:**
 * content here 

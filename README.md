@@ -5,48 +5,49 @@ Team members will alternate responsibility for maintaining these records to ensu
 
 ## Weekly Records
 ### Week 1 (02-Oct-2025)
-**Agenda:**
-* Potential datasets of interest: #11, #14, #18, #24
-* Brainstorm possible research questions and discuss with TA
-* Ensure all members have access to the team’s GitHub repository
+#### Agenda
+* Potential datasets of interest: #11 (Anemia), #14 (Diabetes), #18 (Vaping and Smoking), #24 (Gastric cancer)
+* Present possible research questions and discuss with TA
+* Ensure all members have access to the team’s GitHub repository<br/><br/> 
 
-**Meeting Minutes:**
-##### Project Question Ideas: #####
-- Anemia dataset:
-  - gender X
-  - diet X
-  - comparison of different months X
-  
-- Gastric cancer dataset:
-  - comparison of different subtype histopathologies (the most significant difference is between gastric cancer and healthy) X
-  
-- Smoking and vaping: 
-  - limited sample size and fewer annotations
-  - comparison between geographical locations
-  - different sample (fecal vs. oral) X
-  - population study (cohort vs. cohort comparison) by combining all datasets by focusing on only e-cigarette Y
-  - compare ethnicity in the UK (limited representation) or
-  - ethnic differences in the USA between smoking (=vaping) Caucasian vs. non-Caucasian Y 
-    - categorize into different sample locations
-    - bin everything into each dataset and compare between locations
-    - Focusing on 3 factors: 
-      - Sample location
-      - Ethnicity-based
-      - Smoker or not?
-    - Workflow: categorized into different sample locations > within each sample location > analyze the ethnicity within each sample > Functional analysis 
-    - Functional analysis (i.e, comparison between genders) is only done after the team narrows down locations where we see differences.
-   
-- Diabetes:
+#### Meeting Minutes
+Approved Ideas (✅):
+- **Smoking and vaping** dataset (#18): Ethnic differences in the USA between smoking (=vaping) populations (Caucasian vs. non-Caucasian) 
+  - **Main factors of interest (3):**  
+      1. Sample location  
+      2. Ethnicity  
+      3. Smoker vs. non-smoker  
+   - **Proposed workflow:**
+     - Categorize by sample location and compare between locations
+     - Within each location, analyze ethnicity
+     - Conduct functional analysis (i.e., gender comparisons) only *after narrowing locations where clear differences are observed* <br/><br/>
+    
+Not Approved / Rejected Ideas (❌):
+- **Anemia** dataset (#11):
+  - gender comparison 
+  - diet comparison  
+  - comparison of different months 
+
+- **Smoking and vaping** dataset (#18): 
+  - comparison between geographical locations, but some with a limited sample size and fewer annotations
+  - Different sample sources (fecal vs. oral) 
+  - Population study (cohort vs. cohort comparison) by combining all datasets, focusing only on e-cigarette ✅ (backup plan)
+  - compare ethnicity in the UK (limited representation) 
+
+- **Diabetes** dataset (#14):
   - both datasets are Texas-based. The "Mexican" dataset was conducted in Mexico. 
   - BMI and diabetes X
   - Look more in depth into the dataset: Does diabetes influence bacterial pathway enrichment versus depletion?
-  - Functional analyses (e.g., comparison between genders) 
-
-- Alcohol:
-  - alcohol consumption vs BMI
+  - Functional analyses (e.g., comparison between genders)
+    
+- **Gastric cancer** dataset (#24):
+  - Most significant difference is between gastric cancer vs. healthy
+  - Comparison of different subtype histopathologies   
+  
+- **Alcohol consumption** database (#22):
+  - alcohol consumption vs BMI<br/><br/>    
  
-
-##### Action items: #####
+#### Action items
 - add TA Ritu onto the repository and the team #
 - explore the USA_Smoking_Datasets
 - look into literature to search for additional smoking/microbiome datasets with additional ethnicity (by tomorrow 03-Oct-24) 

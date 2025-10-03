@@ -1,7 +1,6 @@
 # MICB475_25W1_Team_10
-This repository contains weekly **meeting agendas and minutes** for **Team 10** in UJEMI Project 2 (MICB475).
-Agendas are posted before each meeting for mentor review, and minutes are added to record key discussions, decisions, and next steps.  
-Team members will alternate responsibility for maintaining these records to ensure consistent tracking of project progress.
+This repository contains weekly **meeting agendas and minutes** for **Team 10 (Aimee, Kaiya, Kayla and Sophie)** in UJEMI Project 2 (MICB475).
+Agendas are posted before each meeting for mentor review, and minutes are added to record key discussions, decisions, and next steps. Team members will alternate responsibility for maintaining these records to ensure consistent tracking of project progress.
 
 ## Weekly Records
 ### Week 1 (02-Oct-2025)
@@ -36,7 +35,7 @@ Not Approved / Rejected Ideas (❌):
 
 - **Diabetes** dataset (#14):
   - both datasets are Texas-based. The "Mexican" dataset was conducted in Mexico. 
-  - BMI and diabetes X
+  - BMI and diabetes 
   - Look more in depth into the dataset: Does diabetes influence bacterial pathway enrichment versus depletion?
   - Functional analyses (e.g., comparison between genders)
     

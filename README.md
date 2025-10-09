@@ -49,7 +49,10 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
       - To make the new metadata 
  
 #### Action items
-- add TA Ritu onto the repository and the team #
+- Have the new column in both metadata files done and ready--> they have to be exactly the same 
+- Read the proposal docs to know what we have to do 
+- Make action items for next week
+- Start the pipeline!!!
 
 ### Week 1 (02-Oct-2025)
 #### Agenda

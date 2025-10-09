@@ -53,6 +53,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 - Read the proposal docs to know what we have to do 
 - Make action items for next week
 - Start the pipeline!!!
+- We have to upload all of our files on GitHub --> include all qza files too
 
 ### Week 1 (02-Oct-2025)
 #### Agenda

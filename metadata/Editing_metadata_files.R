@@ -72,5 +72,5 @@ meta_cn_new <- meta_cn_description_cohort_combined_columns
 
 write_tsv(meta_cn_new, "metadata/cn_metadata_new.tsv")
 
-write_tsv(meta_us_new, "metadata/uk_metadata_new.tsv")
+write_tsv(meta_us_new, "metadata/us_metadata_new.tsv")
 

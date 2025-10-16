@@ -7,6 +7,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 #### Agenda
 * Q: How do we choose trimming/truncation depth for paired-end reads in QIIME2? Do the forward and reverse reads need to be trimmed to the same length?
 
+---
 ### Week 2 (09-Oct-2025)
 #### Agenda
 * Proposal is due on the 26th
@@ -59,6 +60,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 - Start the pipeline!!!
 - We have to upload all of our files on GitHub --> include all qza files too
 
+---
 ### Week 1 (02-Oct-2025)
 #### Agenda
 * Potential datasets of interest: #11 (Anemia), #14 (Diabetes), #18 (Vaping and Smoking), #24 (Gastric cancer)

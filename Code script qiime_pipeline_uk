@@ -1,0 +1,72 @@
+# Step by step code script used for qiime_pipeline_uk
+
+## Import the repository from GitHub to the local computer
+## Make a new directory called project_2_team_10 in the data directory on the server
+mkdir project_2_team_10
+
+## Transfer the new UK metadata (uk_metadata_new.tsv) from local computer to that directory
+PS C:\Users\aimee\Documents\project_2\MICB475_25W1_Team_10\metadata> scp uk_metadata_new.tsv root@10.19.139.160:/data/project_2_team_10
+
+## Transfer the uk_manifest.tsv from local computer to server
+scp uk_manifest.tsv root@10.19.139.160:/data/project_2_team_10
+
+## Since file paths in uk_seqs and uk_manifest.tsv files were different change them so that the file paths match (.fastq to fast.gz)
+sed -i 's/\.fastq/.fastq.gz/g' /data/project_2_team_10/uk_manifest.tsv
+
+## Import data while working directory is /data/project_2_team_10 and demultiplex using the manifest file
+qiime tools import \
+  --type "SampleData[PairedEndSequencesWithQuality]" \
+  --input-format PairedEndFastqManifestPhred33V2 \
+  --input-path /data/project_2_team_10/uk_manifest.tsv \
+  --output-path ./demux_seqs.qza
+
+## Create visualization of demultiplexed samples
+qiime demux summarize \
+  --i-data demux_seqs.qza \
+  --o-visualization demux_seqs.qzv
+
+## Denoising step using DADA2
+## Trimming parameter was determined so that all reads included have a Quality score of at least 30 
+qiime dada2 denoise-paired \
+  --i-demultiplexed-seqs demux_seqs.qza \
+  --p-trim-left-f 0 \
+  --p-trim-left-r 0 \
+  --p-trunc-len-f 243 \
+  --p-trunc-len-r 221 \
+  --o-table table.qza \
+  --o-representative-sequences rep-seqs.qza \
+  --o-denoising-stats stats.qza
+
+## Conversion of table.qza into a qzv file
+qiime feature-table summarize \
+  --i-table table.qza \
+  --o-visualization table.qzv \
+  --m-sample-metadata-file /data/project_2_team_10/uk_metadata_new.tsv
+
+## Taxonomic analysis
+qiime feature-classifier classify-sklearn \
+  --i-classifier /datasets/classifiers/silva-138-99-515-806-nb-classifier.qza \
+  --i-reads rep-seqs.qza \
+  --o-classification taxonomy.qza
+
+## Visualization of taxonomy.qza
+qiime metadata tabulate \
+  --m-input-file taxonomy.qza \
+  --o-visualization taxonomy.qzv
+
+## Taxonomy barplots
+qiime taxa barplot \
+  --i-table table.qza \
+  --i-taxonomy taxonomy.qza \
+  --m-metadata-file /data/project_2_team_10/uk_metadata_new.tsv \
+  --o-visualization taxa-bar-plots.qzv
+
+## Generate a tree for phylogenetic diversity analyses
+qiime phylogeny align-to-tree-mafft-fasttree \
+  --i-sequences rep-seqs.qza \
+  --o-alignment aligned-rep-seqs.qza \
+  --o-masked-alignment masked-aligned-rep-seqs.qza \
+  --o-tree unrooted-tree.qza \
+  --o-rooted-tree rooted-tree.qza 
+
+

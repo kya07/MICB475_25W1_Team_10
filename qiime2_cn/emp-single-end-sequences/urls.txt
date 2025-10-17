@@ -17,3 +17,9 @@ https://download.cncb.ac.cn/gsa3/CRA002565/CRR130342/CRR130342.fastq.gz
 https://download.cncb.ac.cn/gsa3/CRA002565/CRR130343/CRR130343.fastq.gz
 https://download.cncb.ac.cn/gsa3/CRA002565/CRR130344/CRR130344.fastq.gz
 https://download.cncb.ac.cn/gsa3/CRA002565/CRR130345/CRR130345.fastq.gz
+https://download.cncb.ac.cn/gsa3/CRA002565/CRR130346/CRR130346.fastq.gz
+https://download.cncb.ac.cn/gsa3/CRA002565/CRR130347/CRR130347.fastq.gz
+https://download.cncb.ac.cn/gsa3/CRA002565/CRR130348/CRR130348.fastq.gz
+https://download.cncb.ac.cn/gsa3/CRA002565/CRR130349/CRR130349.fastq.gz
+https://download.cncb.ac.cn/gsa3/CRA002565/CRR130350/CRR130350.fastq.gz
+https://download.cncb.ac.cn/gsa3/CRA002565/CRR130351/CRR130351.fastq.gz

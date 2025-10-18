@@ -35,6 +35,15 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
      
 * China Dataset
   - In progress
+
+<ins> Q&A </ins>
+1. For paired ends sequences, do we need to trim both the reverse and forward sequences at the same length?
+   - No, it doesn't really matter
+   - During discussion, Dr. Sun was added to the GitHub and after taking a look at the quality graphs from the demux files, she recommended to trim both forward and reverse at 200. However, since the qiime2 pipeline took hours to run, she looked at the table.qzv file and found that there were minimal sample loss when the trimming parameters (243 for the forward and 221 for the reverse) were used. Therefore, no changes were need to be made.
+2. How to directly move files into GitHub?
+   - There is no direct way. To move files into GitHub, export the files from the server into local computer, then upload the files into GitHub
+     
+<ins> Discussion on the proposal </ins>
    
 
 ---

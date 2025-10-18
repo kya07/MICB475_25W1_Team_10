@@ -7,6 +7,36 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 #### Agenda
 * Q: How do we choose trimming/truncation depth for paired-end reads in QIIME2? Do the forward and reverse reads need to be trimmed to the same length?
 
+#### Meeting Minutes
+<ins> Overview of the progress that has been made </ins>
+* Metadata file
+  - Made a code on R to add a new ‘Description’ column to both the UK and China metadata files
+  - For the UK metadata file
+    * If the ‘Ecig’ column is Yes and the ‘Tobacco’ column is No, the ‘Description’ column says ecigarretes
+    * If the ‘Ecig’ column is No and the ‘Tobacco’ column is Yes, the ‘Description’ column says tobacco
+    * If both the ‘Ecig’ column and the ‘Tobacco’ column is No, the ‘Description’ column says none
+    * If both the ‘Ecig’ column and the ‘Tobacco’ column is Yes, the ‘Description’ column says NA
+    * Saved the file as “us_metadata_new.tsv”
+  - For the China metadata file
+    * It has a column called ‘Public description’ which states if they do “E-cigarretes smoking #“, “Common tobacco smoking #”, “Non-smoking #”, or ”Quitting smoking with tobacco #” where # is a number, so each one of the entries is different
+    * If the ‘Public Description’ column starts with “E-cig”, the ‘Description’ column says ecigarretes
+    * If the ‘Public Description’ column starts with “Common”, the ‘Description’ column says tobacco
+    * If the ‘Public Description’ column starts with “Non”, the ‘Description’ column says none
+    * If the ‘Public Description’ column starts with “Quitting”, the ‘Description’ column says NA
+    * Saved the file as “cn_metadata_new.tsv”
+      
+* UK Dataset
+  - Have performed the Qiime2 pipeline until taxonomy analysis and generated a taxa-bar-plots.qzv and tree files
+    * Found out that the dataset was paired ends
+    * When performing manifest, received an error message that was resolved by renaming all the  uk_seqs and uk_manifest.tsv files from “.fastq” to “.fast.gz”
+    * Performed the taxonomic analysis using the “silva-138-99-515-806-nb-classifier.qza” classifier since the UK dataset uses the V4 region
+    * See details on the Code script qiime_pipeline_uk file
+   - All the files are stored in the qiime_pipeline_uk folder
+     
+* China Dataset
+  - In progress
+   
+
 ---
 ### Week 2 (09-Oct-2025)
 #### Agenda

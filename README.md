@@ -9,23 +9,23 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 
 #### Meeting Minutes
 <ins> Overview of the progress that has been made </ins>
-* Metadata file
+* **Metadata file**
   - Made a code on R to add a new ‘Description’ column to both the UK and China metadata files
   - For the UK metadata file
-    * If the ‘Ecig’ column is Yes and the ‘Tobacco’ column is No, the ‘Description’ column says ecigarretes
-    * If the ‘Ecig’ column is No and the ‘Tobacco’ column is Yes, the ‘Description’ column says tobacco
-    * If both the ‘Ecig’ column and the ‘Tobacco’ column is No, the ‘Description’ column says none
-    * If both the ‘Ecig’ column and the ‘Tobacco’ column is Yes, the ‘Description’ column says NA
-    * Saved the file as “us_metadata_new.tsv”
-  - For the China metadata file
-    * It has a column called ‘Public description’ which states if they do “E-cigarretes smoking #“, “Common tobacco smoking #”, “Non-smoking #”, or ”Quitting smoking with tobacco #” where # is a number, so each one of the entries is different
-    * If the ‘Public Description’ column starts with “E-cig”, the ‘Description’ column says ecigarretes
-    * If the ‘Public Description’ column starts with “Common”, the ‘Description’ column says tobacco
-    * If the ‘Public Description’ column starts with “Non”, the ‘Description’ column says none
-    * If the ‘Public Description’ column starts with “Quitting”, the ‘Description’ column says NA
-    * Saved the file as “cn_metadata_new.tsv”
+    * If the **‘Ecig’** column is **Yes** and the **‘Tobacco’** column is **No**, the **‘Description’** column says **ecigarretes**
+    * If the **‘Ecig’** column is **No** and the **‘Tobacco’** column is **Yes**, the **‘Description’** column says **tobacco**
+    * If both the **‘Ecig’** column and the **‘Tobacco’** column is **No**, the **‘Description’** column says **none**
+    * If both the **‘Ecig’** column and the **‘Tobacco’** column is **Yes**, the **‘Description’** column says **NA**
+    * Saved the file as **“us_metadata_new.tsv”**
+  - **For the China metadata file**
+    * It has a column called **‘Public description’** which states if they do **“E-cigarretes smoking #“**, **“Common tobacco smoking #”**, **“Non-smoking #”**, or **”Quitting smoking with tobacco #”** where **# is a number**, so each one of the entries is different
+    * If the **‘Public Description’** column starts with **“E-cig”**, the **‘Description’** column says **ecigarretes**
+    * If the **‘Public Description’** column starts with **“Common”**, the **‘Description’** column says **tobacco**
+    * If the **‘Public Description’** column starts with **“Non”**, the **‘Description’** column says **none**
+    * If the **‘Public Description’** column starts with **“Quitting”**, the **‘Description’** column says **NA**
+    * Saved the file as **“cn_metadata_new.tsv”**
       
-* UK Dataset
+* **UK Dataset**
   - Have performed the Qiime2 pipeline until taxonomy analysis and generated a taxa-bar-plots.qzv and tree files
     * Found out that the dataset was paired ends
     * When performing manifest, received an error message that was resolved by renaming all the  uk_seqs and uk_manifest.tsv files from “.fastq” to “.fast.gz”
@@ -33,7 +33,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
     * See details on the Code script qiime_pipeline_uk file
    - All the files are stored in the qiime_pipeline_uk folder
      
-* China Dataset
+* **China Dataset**
   - In progress
 
 <ins> Q&A </ins>
@@ -47,13 +47,13 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 * Before writing the proposal, we need to reach the step right after denoising in the Qiime2 pipeline for both of the datasets
 * For experimental aims, the first aim should be filtering and wrangling data to prepare for analysis
 * The steps below are considered as experimental approaches
-1. Edit the metadata
+1. ***Edit the metadata***
    * In the 'Description' column of both datasets, change "none" to "control"
    * Add a column called "cohort" which specify where the dataset is from, i.e. UK or China
    * Add a column called "combined" which sepcify where the dataset is from and the main category which the data belongs to, e.g. UK_tobacco, UK_ecig, UK_control, etc.
-2. Merge the UK and China phyloseq objects
+2. ***Merge the UK and China phyloseq objects***
    * Ask Ritu how to merge the phyloseq objects
-3. Filter the merged phyloseq object
+3. ***Filter the merged phyloseq object***
    * Filter out non-bacteria sequences, e.g. mitochondria, eukarya, chloroplast, etc.
    * Filter out the NAs
    * Control the confounding variables
@@ -68,13 +68,29 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
        - Controlling for marijuana in the UK dataset may be a good idea, but check the literature on the impact of marijuana on the microbiome before filtering
        - Controlling for alcohol in the UK dataset will result in losing half of the dataset
        - China dataset does not provide information for each participant, but the standard deviation (SD) mentioned in Table 1 of the paper can be used as a basis to filter
-4. Performed analysis
+4. ***Performed analysis***
    * Make sure that both the UK and China datasets are comparable before performing the analysis
-   1. Diversity metrics
-   2. Indicator taxa analysis
-   3. Core Microbiome
-   4. Differential abundance
-   5. Functional analysis
+   1. **Diversity metrics**
+      - This is done to look at the difference between the 6 main categories, which are UK_ecig, UK_tobacco, UK_control, China_ecig, China_tobacco, and China_control
+        - Use the 'combined' column
+        - Cross-comparing the 6 individuals may result in a more interesting data, but there's also an option to compare the UK and China datasets more generally
+      - The results from this analysis will drive the rest of the research questions
+      - Aftr running all of the diversity metrics:
+        - We will start to see interesting patterns or not and this will help us decide what to focus on
+          - We will not be able to focus on all of the interesting observations, instead we need to focus on the interesting observation in which we can collect enough data on
+        - We can also know whether the control are the same or not. IF it's the same, the controls should be binned together
+   2. **Indicator taxa analysis**
+      - This is done to know whether there are specific species of bacteria that are indicative of the different conditions
+        - It will answer questions such as: "which bacteria are always present in the UK_tobacco versus the China_tobacco and which bacteria are shared between the two cohorts?" 
+   3. **Core Microbiome**
+      - This is done to know how many bacteria are share between UK and China versus how many of them are different
+   4. **Differential abundance**
+      - If the results from Bray Curtis or Shannon Diveristy are interesting, this analysis need to be done
+      - This is done to determine the abundance of bacteria, i.e. whether a bacteria is more enriched in one cohort versus another if the cohorts have shared taxa
+   5. **Functional analysis**
+      - This is done to know what metabolic pathways are present and which metabolic pathways are likely to be upregulated or downregulated based on the taxa that exists on those conditions
+        - For example: In the mouth, there are some metabolic pathways that bacteria relied on. By doing functional analysis, we can determine how tobaccor or e-cigarettes disrupt the pathways and whether it differs between UK and China cohorts
+      - This analysis will take a while to run, so make sure to not perform the analysis on all of the potential comparisons, just do the analysis on the most interesting comparisons (this is based on the results from the previous analysis)
 
 <ins> Next steps </ins>
 1. Finish Qiime2 pipeline for China dataset

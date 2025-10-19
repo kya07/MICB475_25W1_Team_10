@@ -43,8 +43,44 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 2. How to directly move files into GitHub?
    - There is no direct way. To move files into GitHub, export the files from the server into local computer, then upload the files into GitHub
      
-<ins> Discussion on the proposal </ins>
-   
+<ins> Discussion on the proposal and the next steps </ins>
+* Before writing the proposal, we need to reach the step right after denoising in the Qiime2 pipeline for both of the datasets
+* For experimental aims, the first aim should be filtering and wrangling data to prepare for analysis
+* The steps below are considered as experimental approaches
+1. Edit the metadata
+   * In the 'Description' column of both datasets, change "none" to "control"
+   * Add a column called "cohort" which specify where the dataset is from, i.e. UK or China
+   * Add a column called "combined" which sepcify where the dataset is from and the main category which the data belongs to, e.g. UK_tobacco, UK_ecig, UK_control, etc.
+2. Merge the UK and China phyloseq objects
+   * Ask Ritu how to merge the phyloseq objects
+3. Filter the merged phyloseq object
+   * Filter out non-bacteria sequences, e.g. mitochondria, eukarya, chloroplast, etc.
+   * Filter out the NAs
+   * Control the confounding variables
+     - Keep in mind that
+       - Trying to control all the confounding variables (i.e. more filtering) will result in fewer samples being retained
+       - Controlling some of the confounding variables (i.e. less filtering) will result in more samples being retained, but with limitations
+       - There are some variables that just can't be controlled
+     - Recommendations from Dr. Sun
+       - Filter in such a way that both the datasets are comparable
+       - Need to do more filtering in the UK dataset compared to the China dateset due to the bigger size and more metadata
+       - No need to control for antibiotics (Antibiotics_Last6mo column) in the UK dataset since all of them are "No"
+       - Controlling for marijuana in the UK dataset may be a good idea, but check the literature on the impact of marijuana on the microbiome before filtering
+       - Controlling for alcohol in the UK dataset will result in losing half of the dataset
+       - China dataset does not provide information for each participant, but the standard deviation (SD) mentioned in Table 1 of the paper can be used as a basis to filter
+4. Performed analysis
+   * Make sure that both the UK and China datasets are comparable before performing the analysis
+   1. Diversity metrics
+   2. Indicator taxa analysis
+   3. Core Microbiome
+   4. Differential abundance
+   5. Functional analysis
+
+<ins> Next steps </ins>
+1. Finish Qiime2 pipeline for China dataset
+   - Running the Qiime2 pipeline on the China dataset should be faster since the dataset invovles single end sequences
+   - If encountered any problem with the Qiime2 pipeline, email the teaching team and ask for alternative rubric of the proposal
+2. Ask Ritu how to merge the phyloseq objects
 
 ---
 ### Week 2 (09-Oct-2025)

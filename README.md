@@ -92,7 +92,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
         - For example: In the mouth, there are some metabolic pathways that bacteria relied on. By doing functional analysis, we can determine how tobaccor or e-cigarettes disrupt the pathways and whether it differs between UK and China cohorts
       - This analysis will take a while to run, so make sure to not perform the analysis on all of the potential comparisons, just do the analysis on the most interesting comparisons (this is based on the results from the previous analysis)
 
-<ins> Next steps </ins>
+#### Action items
 1. Finish Qiime2 pipeline for China dataset
    - Running the Qiime2 pipeline on the China dataset should be faster since the dataset invovles single end sequences
    - If encountered any problem with the Qiime2 pipeline, email the teaching team and ask for alternative rubric of the proposal

@@ -91,6 +91,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
       - This is done to know what metabolic pathways are present and which metabolic pathways are likely to be upregulated or downregulated based on the taxa that exists on those conditions
         - For example: In the mouth, there are some metabolic pathways that bacteria relied on. By doing functional analysis, we can determine how tobaccor or e-cigarettes disrupt the pathways and whether it differs between UK and China cohorts
       - This analysis will take a while to run, so make sure to not perform the analysis on all of the potential comparisons, just do the analysis on the most interesting comparisons (this is based on the results from the previous analysis)
+      - Refer to module optional Module 19 (picrust2)
 
 #### Action items
 1. Finish Qiime2 pipeline for China dataset

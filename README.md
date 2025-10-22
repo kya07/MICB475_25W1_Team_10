@@ -6,7 +6,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 ### Week 4 (23-Oct-2025)
 #### Agenda
 * Q: After citing qimme2 article, do we need to cite DADA2 denoising separately?
-* Q: merging of metadata? Merging of phyloseq objects? - need clarification and further directions
+* Q: Metadata processing: merging of metadata? Merging of phyloseq objects? Filter before merging or the other way around? - need clarification and further directions.
 
 ---
 ### Week 3 (16-Oct-2025)

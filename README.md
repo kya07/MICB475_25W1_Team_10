@@ -3,6 +3,11 @@ This repository contains weekly **meeting agendas and minutes** for **Team 10 (A
 Agendas are posted before each meeting for mentor review, and minutes are added to record key discussions, decisions, and next steps. Team members will alternate responsibility for maintaining these records to ensure consistent tracking of project progress.
 
 ## Weekly Records
+### Week 4 (23-Oct-2025)
+#### Agenda
+* Q: After citing qimme2 article, do we need to cite DADA2 denoising separately?
+* Q: merging of metadata? Merging of phyloseq objects? - need clarification and further directions
+
 ### Week 3 (16-Oct-2025)
 #### Agenda
 * Q: How do we choose trimming/truncation depth for paired-end reads in QIIME2? Do the forward and reverse reads need to be trimmed to the same length?

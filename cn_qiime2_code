@@ -1,0 +1,96 @@
+# Make a new directory 'qiime2_cn' to store files
+mkdir qiime2_cn
+
+# Secure copy chinese_manifest.tsv and chinese_seqs/ from MICB475 class server to local qiime2_cn/ 
+scp root@<IP>:/datasets/project_2/smoking/China/chinese_manifest.tsv .
+
+# Upload new metadata from local to team qiime2_cn/
+mv cn_metadata_new.tsv qimme2_cn/
+
+# Import using a manifest file and Demultiplex
+qiime tools import \
+  --type "SampleData[SequencesWithQuality]" \
+  --input-format SingleEndFastqManifestPhred33V2 \
+  --input-path /datasets/project_2/smoking/China/chinese_manifest.tsv \
+  --output-path cn_demux_seqs.qza
+
+# Create visualization of demultiplexed samples
+qiime demux summarize \
+--i-data cn_demux_seqs.qza \
+--o-visualization cn_demux.qzv
+
+# Copy .qzv file for visulization
+scp root@<IP>:/data/prj2_team10/cn_demux.qzv .
+
+# Denoise and determine ASVs with DADA2
+qiime dada2 denoise-single \
+--i-demultiplexed-seqs cn_demux_seqs.qza \
+--p-trim-left 0 \
+--p-trunc-len 373 \
+--o-representative-sequences cn-rep-seqs.qza \
+--o-table cn-table.qza \
+--o-denoising-stats cn-stats.qza
+
+# Visualize ASVs stats
+qiime feature-table summarize \
+--i-table cn-table.qza \
+--o-visualization cn-table.qzv \
+--m-sample-metadata-file /data/prj2_team10/cn_metadata_new.tsv 
+
+qiime feature-table tabulate-seqs \
+--i-data cn-rep-seqs.qza \
+--o-visualization cn-rep-seqs.qzv
+
+# Train classifier for chinese dataset. 515F/907R primers are used.
+#silva-138-99-nb-classifier.qza pre-trained classifier database of full length 16S rRNA seqeuences is used. 
+#replace primer sequences with your correct sequences
+#replace trunc-len with the one you defined in your denoising step
+qiime feature-classifier extract-reads \
+--i-sequences /datasets/classifiers/silva_ref_files/silva-138-99-seqs.qza \
+--p-f-primer GTGCCAGCMGCCGCGGTAA \
+--p-r-primer CCGTCAATTCCTTTGAGTTT \
+--p-trunc-len 373 \
+--o-reads cn-ref-seqs-trimmed.qza
+
+# Train classifier with the new ref-seq file
+qiime feature-classifier fit-classifier-naive-bayes \
+--i-reference-reads cn-ref-seqs-trimmed.qza \
+--i-reference-taxonomy /datasets/classifiers/silva_ref_files/silva-138-99-tax.qza \
+--o-classifier cn-classifier.qza
+
+# Taxonomic analysis. Use the trained classifier to assign taxonomy to reads (cn-rep-seqs.qza)
+qiime feature-classifier classify-sklearn \
+--i-classifier cn-classifier.qza \
+--i-reads cn-rep-seqs.qza \
+--o-classification cn-taxonomy.qza
+
+qiime metadata tabulate \
+--m-input-file cn-taxonomy.qza \
+--o-visualization cn-taxonomy.qzv
+
+# Taxonomy barplots 
+qiime taxa barplot \
+--i-table cn-table.qza \
+--i-taxonomy cn-taxonomy.qza \
+--m-metadata-file /data/prj2_team10/cn_metadata_new.tsv \
+--o-visualization cn-taxa-bar-plots.qzv
+
+#Export Taxonomy.qzv and Taxa-bar-plot.qzv 
+
+# Without filtering (as will be completed in R), generate a tree for phylogenetic diversity analyses.
+qiime phylogeny align-to-tree-mafft-fasttree \
+--i-sequences cn-rep-seqs.qza \
+--o-alignment cn-aligned-rep-seqs.qza \
+--o-masked-alignment cn-masked-aligned-rep-seqs.qza \
+--o-tree cn-unrooted-tree.qza \
+--o-rooted-tree cn-rooted-tree.qza 
+
+# Alpha-rarefaction (given the maximum frequency is 24,964)
+qiime diversity alpha-rarefaction \
+--i-table cn-table.qza \
+--i-phylogeny cn-rooted-tree.qza \
+--p-max-depth 24000 \
+--m-metadata-file cn_metadata_new.tsv \
+--o-visualization cn-alpha-rarefaction.qzv
+
+# Transfer to team server and GitHub accordingly. 

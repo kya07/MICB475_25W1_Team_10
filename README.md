@@ -8,10 +8,26 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 Questions about the Project workflow/execution: 
 * Discuss what the ideal sampling depth range is for each dataset.
 * Need more clarification and directions on metadata processing. Merging of metadata? Merging of phyloseq objects? Filter before merging or the other way around?
-
+* Regarding data processing:
+  * Is alpha rarefaction curve created differently for paired-end sequences?
+  * How to merge phyloseq objects?
+  * Should we merge the phyloseq objects before determining the sampling depth for alpha diversity? 
+* Regarding diversity metrics:
+  * What alpha and beta diversity metrics should we use? How to do this in R?
+  * Do we need to subset the combined dataset before performing diversity metrics?
+  * Should we use Kruskall-Wallis test for alpha diversity and PERMANOVA for beta diversity?
+* Regarding Indicator Taxa Analysis:
+  * Should we use the taxonomic rank "genus" as the basis for grouping?
+* Regarding core microbiome:
+  * How should we specify the detection abundance and prevalence thresholds?
+  * Should we create both venn diagram and bar plot or just one of them?
+* Regarding functional analysis:
+  * Should we create a heatmap, volcano plot, and bar plot, or is one of them enough?
+  * Do we need to perform statistical analysis?
+  
 Questions about the Proposal: 
 * After citing qimme2 article, do we need to cite DADA2 denoising separately?
-
+* Confirm "Aims and rationale" and "Proposed approach" sections
 
 ---
 ### Week 3 (16-Oct-2025)

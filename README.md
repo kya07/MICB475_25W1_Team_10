@@ -11,7 +11,8 @@ Questions about the Project workflow/execution:
 * Regarding data processing:
   * Is alpha rarefaction curve created differently for paired-end sequences?
   * How to merge phyloseq objects?
-  * Should we merge the phyloseq objects before determining the sampling depth for alpha diversity? 
+  * Should we merge the phyloseq objects before determining the sampling depth for alpha diversity?
+  * What variables should we control for?
 * Regarding diversity metrics:
   * What alpha and beta diversity metrics should we use? How to do this in R?
   * Do we need to subset the combined dataset before performing diversity metrics?

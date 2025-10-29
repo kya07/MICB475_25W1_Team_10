@@ -20,7 +20,6 @@ tax <- read_delim(taxfp, delim="\t")
 
 phylotreefp <- file.path("qiime_pipeline_uk", "project_2_team_10", "us_exports","rooted-tree_export", "tree.nwk")
 phylotree <- read_tree(phylotreefp)
-class(phylotree)
 
 #### Format sample metadata ####
 # Save everything except sample-id as new data frame

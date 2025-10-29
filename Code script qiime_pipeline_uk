@@ -69,4 +69,33 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-tree unrooted-tree.qza \
   --o-rooted-tree rooted-tree.qza 
 
+## Generate the alpha rarefaction curve
+qiime diversity alpha-rarefaction \
+  --i-table table.qza \
+  --i-phylogeny rooted-tree.qza \
+  --p-max-depth 81000 \
+  --m-metadata-file /data/project_2_team_10/uk_metadata_new.tsv \
+  --o-visualization alpha-rarefaction.qzv
+
+## Export files
+qiime tools export \
+  --input-path /data/project_2_team_10/table.qza \
+  --output-path table_export
+
+biom convert \
+-i feature-table.biom \
+--to-tsv \
+-o feature-table.txt
+
+qiime tools export \
+  --input-path /data/project_2_team_10/taxonomy.qza \
+  --output-path taxonomy_export
+
+qiime tools export \
+  --input-path /data/project_2_team_10/rooted-tree.qza \
+  --output-path rooted-tree_export
+
+scp -r root@10.19.139.160:/data/project_2_team_10/us_exports .
+
+
 

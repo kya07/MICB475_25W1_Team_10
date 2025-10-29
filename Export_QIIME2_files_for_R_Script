@@ -1,0 +1,31 @@
+###### Export QIIME2 files (qza) into human-readable formats (txt, tsv, or csv) ######
+# Create a new output directory for export files
+mkdir qiime2_cn_export
+
+# Exporting the cn-table.qza file while in the qiime2_cn_export working directory
+qiime tools export \
+--input-path /data/qiime2_cn/cn-table.qza \
+--output-path .
+ # Generates an intermediate .biom file
+biom convert \
+-i feature-table.biom \
+--to-tsv \
+-o cn-feature-table.txt
+  # Obatain cn-feature-table.txt 
+
+# Exporting the cn-taxonomy.qza file while in the qiime2_cn_export working directory
+qiime tools export \
+--input-path /data/qiime2_cn/cn-taxonomy.qza \
+--output-path . 
+  # Obtain taxonomy.tsv
+
+# Exporting the cn-rooted-tree.qza file while in the qiime2_cn_export working directory
+qiime tools export \
+--input-path ../cn-rooted-tree.qza \
+--output-path . 
+  # Obtain tree.nwk
+
+# Transfer the qiime2_cn_export folder into local computer. 
+scp -r root$XXXXXX:/data/qiime2_cn/qiime2_cn_export .
+
+# Upload the folder (without the intermediate .biom file) and a zipped version onto group GitHub. 

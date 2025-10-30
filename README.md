@@ -3,6 +3,12 @@ This repository contains weekly **meeting agendas and minutes** for **Team 10 (A
 Agendas are posted before each meeting for mentor review, and minutes are added to record key discussions, decisions, and next steps. Team members will alternate responsibility for maintaining these records to ensure consistent tracking of project progress.
 
 ## Weekly Records
+### Week 5 (30-Oct-2025)
+#### Agenda
+* Address questions both within and outside the scope of the proposal. 
+* Attempt and troubleshoot merging of the two phyloseq objects.
+
+---
 ### Week 4 (23-Oct-2025)
 #### Agenda
 Questions about the Project workflow/execution: 

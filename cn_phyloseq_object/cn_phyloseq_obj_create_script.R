@@ -1,12 +1,12 @@
 #!/usr/bin/env RScript 
 
-#### Load data ####
+#### Load packages ####
 # Load in the 'phyloseq', 'tidyverse', and 'ape' package
 library(phyloseq)
 library(tidyverse)
 library(ape) 
 
-#### Load packages ####
+#### Load data ####
 # Load in the cn_metadata, OTU table, taxonomy file, and phylogenetic tree
 cn_meta <- read_delim(file = "cn_metadata_new.tsv", delim = "\t")
 cn_otu <- read_delim(file="cn-feature-table.txt", delim = "\t", skip=1)

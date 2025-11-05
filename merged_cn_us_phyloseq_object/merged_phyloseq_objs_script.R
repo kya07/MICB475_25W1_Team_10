@@ -23,7 +23,8 @@ cn_otu <- read_delim(file="cn-feature-table.txt", delim = "\t", skip=1)
 cn_taxonomy <- read_delim(file = "cn-taxonomy.tsv", delim="\t")
 cn_tree <- read.tree("cn-tree.nwk")
 
-meta <- read_delim(file= "us_metadata_new.tsv", delim = "\t")
+meta <- read_delim(file= "us_metadata_new.tsv", delim = "\t") |> 
+  rename(Sample_Type = SampleType) #renamed column to address R not recognizing the column name
 otu <- read_delim(file= "feature-table.txt", delim = "\t", skip=1)
 tax <- read_delim("taxonomy.tsv", delim="\t")
 phylotree <- read.tree("tree.nwk")

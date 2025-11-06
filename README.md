@@ -2,11 +2,43 @@
 This repository contains weekly **meeting agendas and minutes** for **Team 10 (Aimee, Kaiya, Kayla and Sophie)** in UJEMI Project 2 (MICB475).
 Agendas are posted before each meeting for mentor review, and minutes are added to record key discussions, decisions, and next steps. Team members will alternate responsibility for maintaining these records to ensure consistent tracking of project progress.
 
+
 ## Weekly Records
+### Week 6 (06-Nov-2025)
+#### Agenda
+* Recap merging of US and CN phyloseq objects (tree is dropped for downstream analyses) 
+* Discuss results obtained: 
+  * merged phyloseq object's rarefaction curve before vs after filtering (the number of samples went from 123 to 44)
+  * α-diversity: Shannon Index with Kruskal-Wallis results
+  * β-diversity: Bray-Curtis with PERMANOVA
+
+#### Meeting Minutes
+
+
+#### Action items
+
+
+---
 ### Week 5 (30-Oct-2025)
 #### Agenda
 * Address questions both within and outside the scope of the proposal. 
 * Attempt and troubleshoot merging of the two phyloseq objects.
+
+#### Meeting Minutes
+* Generation of alpha rarefaction curve 
+   * For the alpha rarefaction curve, there are two options: either you can make one curve per dataset or make one curve representing both datasets.
+   * If decided to go for one curve per dataset, use the sequencing depth of the dataset that has the lower sampling depth.
+   *  Sequencing depth for CN is 10870 and US is 16,432; thus, CN has the lower sequenicng depth. 
+   * Regardless of which option the team decides to go with, remember to mention that in the dataset overview section clearly.
+   * May generate another rarefaction curve after phyloseq objects merging and compare with before merging (for your interest only)
+* Filtering parameters _after merging_ check
+    * Filter out: NAs, Weed column (from us_dataset), bmi for e-cigarette < 18.5, bmi for non-smoker(cntl) < 18.5
+    * Restrict age for each group to: e-cigarette (age 24-48), tabacco (age 28-47) and non-smoking control (29-54)
+ 
+#### Action items
+* Continue proposal writing
+* Merge us and cn phyloseq objects into one single phyloseq object (Merging command: merge_phyloseq(phyloseq1, phyloseq2))
+* Update R scripts to ensure consistency in GitHub organization
 
 ---
 ### Week 4 (23-Oct-2025)
@@ -36,6 +68,27 @@ Questions about the Proposal:
 * After citing qimme2 article, do we need to cite DADA2 denoising separately?
 * Confirm "Aims and rationale" and "Proposed approach" sections
 
+#### Meeting Minutes
+* Logistics / Clarifications: 
+     * Build separate phyloseq objects per dataset, then merge.
+     * Required components for each phyloseq object: Rooted tree (phy_tree); OTU/ASV table (otu_table); Representative sequences (refseq); Taxonomy table (tax_table)
+* Sequencing depth for each dataset should be reported separately before merging (document per-dataset depth stats)
+     * Sequencing depth for CN is 10870 and US is 16,432
+     * Filter accordingly after merging based on dataset limitations and to control for confounding variables
+     * Proceed to diversity and differential analyses
+* Poposal's introduction
+   * Provide concise scientific background from prior studies directly tied to our research question.
+   * Keep narrative connected; every citation should motivate or justify the question.
+   * End with a clear gap statement → leads to our hypothesis.
+* Methods:
+   * Specify exact statistical tests (e.g., Wilcoxon rank-sum, Kruskal–Wallis, PERMANOVA/ADONIS).
+   * Specify diversity metrics: Alpha: Shannon, Observed ASVs, Faith’s PD (if tree available). Beta: Bray–Curtis, UniFrac (unweighted/weighted).
+   * Document rarefaction depth decision and filtering criteria.  
+
+#### Action items
+* Discuss on filtering parameters that come after phyloseq object merging
+* Come up with a feasible project timeline 
+  
 ---
 ### Week 3 (16-Oct-2025)
 #### Agenda

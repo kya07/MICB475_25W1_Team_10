@@ -6,16 +6,26 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 ## Weekly Records
 ### Week 6 (06-Nov-2025)
 #### Agenda
-* Recap merging of US and CN phyloseq objects (tree is dropped for downstream analyses) 
+* Recap merging of US and CN phyloseq objects (tree is dropped for downstream analyses)
 * Discuss results obtained: 
   * merged phyloseq object's rarefaction curve before vs after filtering (the number of samples went from 123 to 44)
   * α-diversity: Shannon Index with Kruskal-Wallis results
   * β-diversity: Bray-Curtis with PERMANOVA
+  * The filtering that was done is very logical according to our TA
 
 #### Meeting Minutes
-
-
+* Discussion about the results obtained from the diversity metrics
+  * 9 groups were selected to proceed with the next phase of our aims: us_control v.s us_tobacco, us_control v.s us_e-cigarrete, cn_control v.s cn _tobacco, cn_control v.s cn_e-cigarrete, us_control v.s cn_control, us_tobacco v.s cn_tobacco, us_e-cigarrete v.s cn_e-cigarrete, us_e-cigarrete v.s us_tobacco, cn_e-cigarrete v.s cn_tobacco
+  * Significant differences were noted in: us_control v.s cn_control, us_tobacco v.s cn_tobacco, cn_control v.s cn_e-cigarrete and us_e-cigarrete v.s us_tobacco
+  * Curiosly no differences were noted in: cn_control v.s cn _tobacco, cn_e-cigarrete v.s cn_tobacco, us_e-cigarrete v.s cn_e-cigarrete, us_control v.s us_e-cigarrete, us_control v.s us_tobacco
+  * Differences between the control groups from each cohort may be influenced by external factors
+  * us_control and cn_e-cigarretes don’t have a significance difference, which is interesting but might not add to the story
+ 
 #### Action items
+*	Make another table with only the significant ones to ensure clarity
+*	Indicator Taxa, DEseq and Core Microbiome analyses are expected to be completed by next week on each of 9 groups selected
+*	Functional analysis will be performed after Aims 2-4 are completed
+*	Tasks were splited between each member: Kaiya-DEseq, Kayla-Core Microbiome, Aimee-Indicator Taxa Analysis, Sophie- Functional Analysis
 
 
 ---

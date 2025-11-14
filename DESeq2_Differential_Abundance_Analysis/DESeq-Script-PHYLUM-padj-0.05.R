@@ -89,7 +89,7 @@ us_ecigarettes_vs_us_control_vol_plot <- us_ecigarettes_vs_us_control |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + # change axes names
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("U.S. E-Cigarette Users vs. U.S. Controls") +
+  ggtitle("U.S. E-Cigarette Users vs. U.S. Controls (padj < 0.05, |log2FC| > 2)") +
   theme_test() + # apply minimalist theme, grey background removed
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -107,7 +107,7 @@ us_tobacco_vs_us_control_vol_plot <- us_tobacco_vs_us_control |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + 
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("U.S. Tobacco Users vs. U.S. Controls") +
+  ggtitle("U.S. Tobacco Users vs. U.S. Controls (padj < 0.05, |log2FC| > 2)") +
   theme_test() + 
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -126,7 +126,7 @@ us_tobacco_vs_us_ecigarettes_vol_plot <- us_tobacco_vs_us_ecigarettes |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + 
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("U.S. Tobacco Users vs. U.S. E-Cigarette Users ") +
+  ggtitle("U.S. Tobacco Users vs. U.S. E-Cigarette Users (padj < 0.05, |log2FC| > 2)") +
   theme_test() + 
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -145,7 +145,7 @@ cn_ecigarettes_vs_cn_control_vol_plot <- cn_ecigarettes_vs_cn_control |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + # change axes names
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("CN E-Cigarette Users vs. CN Controls") +
+  ggtitle("CN E-Cigarette Users vs. CN Controls (padj < 0.05, |log2FC| > 2)") +
   theme_test() +  
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -163,7 +163,7 @@ cn_tobacco_vs_cn_control_vol_plot <- cn_tobacco_vs_cn_control |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + 
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("CN Tobacco Users vs. CN Controls") +
+  ggtitle("CN Tobacco Users vs. CN Controls (padj < 0.05, |log2FC| > 2)") +
   theme_test() + 
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -181,7 +181,7 @@ cn_tobacco_vs_cn_ecigarettes_vol_plot <- cn_tobacco_vs_cn_ecigarettes |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + 
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("CN Tobacco Users vs. CN E-Cigarette Users ") +
+  ggtitle("CN Tobacco Users vs. CN E-Cigarette Users (padj < 0.05, |log2FC| > 2)") +
   theme_test() + 
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -200,7 +200,7 @@ cn_control_vs_us_control_vol_plot <- cn_control_vs_us_control |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + # change axes names
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("CN Controls vs. U.S. Controls") +
+  ggtitle("CN Controls vs. U.S. Controls (padj < 0.05, |log2FC| > 2)") +
   theme_test() + # apply minimalist theme, grey background removed
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -218,7 +218,7 @@ cn_ecigarettes_vs_us_ecigarettes_vol_plot <- cn_ecigarettes_vs_us_ecigarettes |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + # change axes names
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("CN E-Cigarette Users vs. U.S. E-Cigarette Users") +
+  ggtitle("CN E-Cigarette Users vs. U.S. E-Cigarette Users (padj < 0.05, |log2FC| > 2)") +
   theme_test() +  
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -236,7 +236,7 @@ cn_tobacco_vs_us_tobacco_vol_plot <- cn_tobacco_vs_us_tobacco |>
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   xlab("Log2FoldChange") + 
   ylab("-Log10(Adjusted P-Value)") +
-  ggtitle("CN Tobacco Users vs. U.S. Tobacco Users ") +
+  ggtitle("CN Tobacco Users vs. U.S. Tobacco Users (padj < 0.05, |log2FC| > 2)") +
   theme_test() + 
   theme(
     plot.title = element_text(face = "bold", size = 15), 
@@ -281,7 +281,7 @@ facted_volcano_plot <- volc_all |>
         facet_grid(dataset ~ comparison) +
         xlab("Log2FoldChange") +  
         ylab("-Log10(Adjusted P-Value)") +
-        ggtitle("Within-China, Within-U.S., and Between-Dataset DESeq2 Analysis") +
+        ggtitle("Within-China, Within-U.S., and Between-Dataset DESeq2 Analysis (padj < 0.05, |log2FC| > 2)") +
         theme_test() +  
         theme(
           plot.title = element_text(face = "bold", size = 15, hjust = 0.5), 
@@ -306,17 +306,17 @@ plots_list <- list(
   "faceted_volcano_plot"             = facted_volcano_plot   # add the combined grid
 )
 
-# # create output folder for PNGs
-# dir.create("volcano_pngs", showWarnings = FALSE)
-# 
-# # Save each plot automatically
-# for (nm in names(plots_list)) {
-#   ggsave(
-#     filename = file.path("volcano_pngs", paste0(nm, ".png")),
-#     plot = plots_list[[nm]], 
-#     width = 10.5, height = 5
-#   )
-# }
+# create output folder for PNGs
+dir.create("volcano_pngs-padj-0.05", showWarnings = FALSE)
+
+# Save each plot automatically
+for (nm in names(plots_list)) {
+  ggsave(
+    filename = file.path("volcano_pngs-padj-0.05", paste0(nm, ".png")),
+    plot = plots_list[[nm]],
+    width = 10.5, height = 5
+  )
+}
 
 
 

@@ -20,6 +20,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
   * Curiosly no differences were noted in: cn_control v.s cn _tobacco, cn_e-cigarrete v.s cn_tobacco, us_e-cigarrete v.s cn_e-cigarrete, us_control v.s us_e-cigarrete, us_control v.s us_tobacco
   * Differences between the control groups from each cohort may be influenced by external factors
   * us_control and cn_e-cigarretes don’t have a significance difference, which is interesting but might not add to the story
+  * PCoA plots showed that cn control is different from cn tobacco and cn e-cigarettes groups which overlap with one another. On the other hand, for the US groups, all of them overlap with one another so no difference between them is noted.
  
 #### Action items
 *	Make another table with only the significant ones to ensure clarity

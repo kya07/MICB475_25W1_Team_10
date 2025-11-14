@@ -29,7 +29,7 @@ final_table_phylum <- isa$sign %>%
   left_join(taxtable) %>% #Join with taxa table based on the ASVs ID
   filter(p.value<0.05) #Filter for anything that has a p value of <0.05 
 
-# Step 6: Save the table in the working directory
+# Step 6: Save the table in the working directory 
 write.csv(final_table_phylum, file = "final_table_phylum.csv", row.names = FALSE)
 
 

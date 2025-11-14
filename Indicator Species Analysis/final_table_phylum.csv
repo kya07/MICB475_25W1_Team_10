@@ -1,0 +1,6 @@
+"ASV","s.cn_control","s.cn_ecigarettes","s.cn_tobacco","s.us_control","s.us_ecigarettes","s.us_tobacco","index","stat","p.value","Domain","Phylum","Class","Order","Family","Genus","Species"
+"8674dcf0cfe35939037fa9a5b986866f",0,0,0,1,1,1,41,0.990222009920092,0.005,"d__Bacteria","p__Fusobacteriota","c__Fusobacteriia","o__Fusobacteriales","f__Fusobacteriaceae","g__Fusobacterium",NA
+"9847664b4858be92db8ad749403db4f0",0,1,1,1,0,1,53,0.927696792913885,0.005,"d__Bacteria","p__Patescibacteria","c__Gracilibacteria","o__Absconditabacteriales_(SR1)","f__Incertae_Sedis","g__Incertae_Sedis",NA
+"550e67990490201211cecffcea993240",0,0,0,1,1,1,41,0.936030519179236,0.005,"d__Bacteria","p__Spirochaetota","c__Spirochaetia","o__Spirochaetales","f__Spirochaetaceae","g__Treponema",NA
+"4f6c9ee0f472b568270d7ed78278aa19",0,0,0,1,1,1,41,0.858531085892709,0.005,"d__Bacteria","p__Synergistota","c__Synergistia","o__Synergistales","f__Synergistaceae","g__Fretibacterium",NA
+"1e0be865b8accd4529f7974e98460887",0,0,1,0,0,0,3,0.597614304667197,0.04,"d__Bacteria","p__Elusimicrobiota","c__Elusimicrobia","o__Lineage_IV","f__Incertae_Sedis","g__Incertae_Sedis",NA

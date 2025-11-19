@@ -440,7 +440,7 @@ count_values_type <- combined_results_type  |>
 count_values_type
 
 # Save the merged results as a CSV file
-# write.csv(count_values_type, "DESeq_graphvalues_ferm.csv", row.names = FALSE)
+# write.csv(count_values_type, "DESeq_graphvalues_combined.csv", row.names = FALSE)
 
 
 #### Determining which phylum most abundant #### 

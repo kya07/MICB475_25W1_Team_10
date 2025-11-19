@@ -1,0 +1,10 @@
+"Type","count_above_2","count_below_2"
+"cn_control_vs_us_control",47,139
+"cn_ecigarettes_vs_cn_control",44,22
+"cn_ecigarettes_vs_us_ecigarettes",70,93
+"cn_tobacco_vs_cn_control",45,29
+"cn_tobacco_vs_cn_ecigarettes",20,39
+"cn_tobacco_vs_us_tobacco",106,205
+"us_ecigarettes_vs_us_control",17,40
+"us_tobacco_vs_us_control",16,12
+"us_tobacco_vs_us_ecigarettes",29,13

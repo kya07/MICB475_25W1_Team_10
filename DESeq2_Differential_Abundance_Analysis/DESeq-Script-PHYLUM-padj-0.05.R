@@ -307,16 +307,16 @@ plots_list <- list(
 )
 
 # create output folder for PNGs
-dir.create("volcano_pngs-padj-0.05", showWarnings = FALSE)
-
-# Save each plot automatically
-for (nm in names(plots_list)) {
-  ggsave(
-    filename = file.path("volcano_pngs-padj-0.05", paste0(nm, ".png")),
-    plot = plots_list[[nm]],
-    width = 10.5, height = 5
-  )
-}
+# dir.create("volcano_pngs-padj-0.05", showWarnings = FALSE)
+# 
+# # Save each plot automatically
+# for (nm in names(plots_list)) {
+#   ggsave(
+#     filename = file.path("volcano_pngs-padj-0.05", paste0(nm, ".png")),
+#     plot = plots_list[[nm]],
+#     width = 10.5, height = 5
+#   )
+# }
 
 
 

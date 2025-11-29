@@ -3,13 +3,13 @@ This repository contains weekly **meeting agendas and minutes** for **Team 10 (A
 Agendas are posted before each meeting for mentor review, and minutes are added to record key discussions, decisions, and next steps. Team members will alternate responsibility for maintaining these records to ensure consistent tracking of project progress.
 
 
-## Weekly Agenda, Meeting Minutes and Action Items Records
-- [Week 6 (06-Nov-2025)](#week-6-06-nov-2025)
-- [Week 5 (30-Oct-2025)](#week-5-30-oct-2025)
-- [Week 4 (23-Oct-2025)](#week-4-23-oct-2025)
-- [Week 3 (16-Oct-2025)](#week-3-16-oct-2025)
-- [Week 2 (09-Oct-2025)](#week-2-09-oct-2025)
+### Weekly Agenda, Meeting Minutes, and Action Items
 - [Week 1 (02-Oct-2025)](#week-1-02-oct-2025)
+- [Week 2 (09-Oct-2025)](#week-2-09-oct-2025)
+- [Week 3 (16-Oct-2025)](#week-3-16-oct-2025)
+- [Week 4 (23-Oct-2025)](#week-4-23-oct-2025)
+- [Week 5 (30-Oct-2025)](#week-5-30-oct-2025)
+- [Week 6 (06-Nov-2025)](#week-6-06-nov-2025)
 ----
 
 ### Week 6 (06-Nov-2025)

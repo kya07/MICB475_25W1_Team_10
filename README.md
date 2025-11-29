@@ -2,7 +2,7 @@
 This repository contains weekly **meeting agendas and minutes** for **Team 10 (Aimee, Kaiya, Kayla and Sophie)** in UJEMI Project 2 (MICB475).
 Agendas are posted before each meeting for mentor review, and minutes are added to record key discussions, decisions, and next steps. Team members will alternate responsibility for maintaining these records to ensure consistent tracking of project progress.
 
-
+---
 ### Weekly Agenda, Meeting Minutes, and Action Items
 - [Week 1 (02-Oct-2025)](#week-1-02-oct-2025)
 - [Week 2 (09-Oct-2025)](#week-2-09-oct-2025)
@@ -10,7 +10,232 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 - [Week 4 (23-Oct-2025)](#week-4-23-oct-2025)
 - [Week 5 (30-Oct-2025)](#week-5-30-oct-2025)
 - [Week 6 (06-Nov-2025)](#week-6-06-nov-2025)
-----
+- [Week 7 (20-Nov-2025)](#week-7-20-nov-2025)
+- [Week 8 (20-Nov-2025)](#week-8-27-nov-2025)
+
+### Folder Clarification/ Notes
+* Add in notes if applicable. 
+---
+### Week 8 (27-Nov-2025)
+#### Agenda
+* Obtain feedback for the presentation slide draft
+* Confirm interpretation of data
+* Feedback for 'conclusive statement' titles
+* Discuss which information doesn't add to our presentation 
+
+#### Meeting Minutes
+* **Presentation slides notes for Sophie**
+   - Introduction of topic and Importance of the topic: 
+      - 3 columns:
+        - Brief introduction of e-cig and tobacco
+        - Link microbiome and smoking
+        - Importance of study: Not much research across cohorts
+   - Dataset overview and Methods: 
+      - Comparison of the dataset (2-column comparison) 
+      - Boxes showcasing what matrices we ran
+   - Others:
+        - Only show the ecig slide 
+        - Ignore smoking one 
+        - No difference in US
+        - Differences in China, and that the changes are BAD. (functionally, they don’t look) 
+
+
+* **Presentation slides notes for Kayla**
+   - Overall: 
+        - Consistency in group graphs by removing grey line 
+        - Colourblind-saved colour?  
+        - Alpha diversity title is good as a conclusive statement 
+        - China box plot 1 shape and US plot another shape 
+        - Need to simplify text 
+   - Must mention for ALPHA diversity: ← Can be cut for presentation
+        - Baselines between populations are different 
+        - US_control baseline is different from CN_control
+        - Less changes in microbiome in US cohort 
+        - Double check the p-values → observed might be missing some significant ones 
+        - Above 3 points → highlight each one with a box as an animation as points appear 
+        - **Baseline Difference**
+        - Cut out alpha as show similar to Beta
+        - Less change in US cohort’s microbiome 
+   - Must mention for Beta diversity - Bray-Curtis 
+        - NO difference in US 
+        - Only changes in the CN cohort → a different title is needed 
+        - No text needed → easily understandable 
+   - Venn diagrams 
+        - Conclusions/title change → reflect how much of the profile is shared (i.e., More significant changes in CN cohort than US) 
+        - Us ⅓ 
+        - CHINA only 15% 
+        - Supports the overall conclusion
+
+* **Presentation slides notes for Aimee**
+   - Remove the first statement for each of the points for each cohort 
+   - Make the font larger
+   - 2nd slide 
+        - Have the table on the side and only add the bolded statements 
+        - No full sentences needed 
+   - Title → for indicator taxamaybe mention that it's mainly pathogenic or non-pathogenic → describe the profile a bit  
+        - US seems to be mainly shaped with commensal non-pathogenic bacteria 
+        - CN seems to be mainly shaped with pathogenic bacteria 
+   - Maybe remove phylum to make it bigger 
+
+* **Presentation slides notes for Kaiya**
+   - Box plot, revise: 
+        - Orange - China
+        - Blue - US 
+        - Not much of a concern though, since present phylum-count 
+   - Use over and underrepresented instead 
+   - Don't use changes as it is not a time-course analysis, but differences 
+   - Microbes in the blue are 5x greater relative to the control
+   - Remove tobacco vs ecigarettes for the presentation only
+   - DIFFERENCES (not word “changes”)
+
+#### Action items
+* Make your title (conclusive statement) shorter → put into conclusions!
+* For whole story (will be your conclusion slide): 
+   - Differences between cohorts suggest that each cohort’s microbiome responds differently to tobacco and e-cigarette use.
+   - Not much changes in US 
+   - More changes in China cohort 
+   - Is this profile change (ie increase) good or bad tho? 
+      - Accordingly to functional analysis, profile changes in Chinese cohort is NOT positive 
+* Change in diversity is not always good, can be unhealthy / negative profile 
+* Cut alpha? Confirm. Cut alpha diversity for presentation. 
+
+---
+### Week 7 (20-Nov-2025)
+#### Agenda
+* Present Results and find interesting findings
+* Get feedback on ways to improve visualizations
+
+#### Meeting Minutes
+* **Diversity Metrics**
+  * Alpha Diversity:
+      1. Shannon Diversity:
+         - cn_control have lower baseline compared to cn_ecig and cn_tobacco
+         - cn_control lower than us_control
+         - us_control has very high baseline
+         - us_control has the same diversity as us_tobacco
+         - Similar to what was observed in the Columbia study where participants are Columbians but eat westernized diet
+         - Suggests that diet may play a part in the difference in baseline between US and CN
+      2. Observed features: 
+         - The observed features of US and CN tobacco are very similar to their Shannon Diversity and that the US cohort has higher baseline than CN cohort
+         - Implies that the effect of tobacco on diversity may depend on how much bacteria you have in the first place
+  * Beta Diversity:
+    - Beta diversity of each smoking status overlaps in the US cohort meaning that the beta diversity between the groups doesn’t change much
+    - Meanwhile in the CN cohort, the non-smokers cluster is distinct from the tobacco and ecig smokers clusters, which suggests that beta diversity between smoking status in the CN cohort change significantly
+    - In addition, beta diversity of CN ecig and tobacco overlaps
+  * Statistical Analysis
+    - For alpha diversity, use Kruskal-Wallis and Dunn test
+    - It will provide a more accurate p-value compared to the anova
+* **Diversity Metrics - *Tips on visualizations***:
+  * Alpha Diversity:
+    - Delete the non-significance, only show the significance ones
+    - In the figure legend, mentioned that “p-value above 0.05 is not shown”
+    - Re-label x-axis using the format: (Cohort, Smoking Status). E.g. (China, Control), etc.
+    - Re-format figure legend accordingly
+    - Boxplot should be colored based on the color used in beta diversity PCOA plot
+    - Alternative option: when saving the plot from R, use a bigger width so that the significance can be manually added in powerpoint
+  * Beta diversity: 
+    - PERMANOVA results should be mentioned in the figure legend
+    - Re-label the legends; keep it consistent with alpha diversity
+  * Overall: 
+    - All figures throughout the paper should have a consistent format
+    - Same theme, same color coding, etc.
+    - All the figures should have the same plot theme
+    - Currently, the plot theme (i.e. background) is grey, recommended to change to a different theme
+    - Recommended to use text size 18
+    - When making plots, keep in mind that the plot will be small when put into the manuscript
+    - So any text or labels should be visible even if the plot size is small
+    - In the manuscript, usually alpha diversity plots will be above beta diversity plots
+
+* **Core Microbiome**
+  * Takeaways: 
+    - Different pattern between us and china cohorts
+    - Use DESeq or Indicator Taxa Analysis to identify the bacteria unique for each category
+    - Initially Dr. Sun recommended to use a table generated from the core microbiome analysis to identify the unique bacteria for each category, but Dr. Avril disagree since there will be too much data
+  * TIPS ON VISUALIZATION: 
+    - Use only one color
+    - Use the venn diagram separated based on cohort, i.e. US, CN
+    - No need to include the large venn diagram
+    - For publication, it is advised to not display one result in multiple formats
+    - Use bigger fonts for the label
+
+* **Indicator Taxa Analysis**
+  * TIPS:
+    - Look at past UJEMI papers to see how they format the indicator taxa analysis table
+    - The indicator taxa analysis table should be a big table which includes the unique taxa for each categories
+    - Just need to remove the ASV column since the name of the ASV will change every time you run the code
+    - Columns required: Stat =use 3 d.p. since the p-value uses 3 d.p.; P-value; Taxa = includes at least the phylum, family, genus
+    - Treat “NA” or “Incertae_sedis” as  “unclassified”
+  *Takeaways: 
+    - Taxa in cn_control is pathogenic
+    - There’s some weird results in us_ecig since there’s lactobacillus and commensal bacteria, which are considered “good” bacteria
+  *TIPS ON ANALYSIS: 
+    - Oral health can affect the microbiome
+    - Look for literature explaining this relationship
+    - Also, look for periodontitis
+    - Need to see functional analysis results to make sense of it
+
+* **DESeq2**
+  * TIPS ON VISUALIZATION: 
+    1. Volcano Plot: 
+        - Remove the “significant” legend in the volcano plot. Instead will be added to the Manuscript’s figure legend
+        - In the figure legend, mentioned that red is not significant and blue is significant
+        - Remove volcano plots that compare between US vs China
+        - Diversity metrics (see Part I) is enough to show that there’s a significant difference between cohorts
+        - Differences between cohorts will not be the main focus for our manuscript; we will be focusing differences WITHIN cohorts
+        - Alternative: Can include the plots that compare between US vs China in the supplemental figures section
+        - Only keep WITHIN cohorts (2 by 3 table)
+        - Volcano plot information is very general → then connect to Bar Plot’s Count table
+
+    2. Bar Plot & associated Count Table: 
+        - Since there’s a lot of phylum, using the DESeq bar plot won’t be meaningful; instead, make a “phylum count” table that contains a list of phyla and their count (basically what we have done is correct)
+        - Resolving to the phylum level will be the best choice
+        - Using p-adj <0.01 and log 2-fold are okay
+        - The phylum count table won’t be included in the manuscript, but the bar plot that was created based on this table will be included
+        - As the previous volcano plot and the present bar plot showcasing counting results can be presented together in manuscript
+        - For the “phylum count” table, no need to include
+        - the ecig vs tobacco comparison for both US and CN
+        - All comparisons between US and CN
+        - Create a **bar graph based on the “phylum count” table** (i.e., graphing the absolute counts of the microbe that are enriched or depleted):
+           - x-axis = Phylum
+           - y-axis = Count
+           - Each phylum will have 2 bars: count below 2 = color: red, label: “depleted”  & count above 2 = color: blue, label: “enriched”
+           - The coloring of the bars should be consistent with the coloring used in the volcano plots   (Enriched vs Depleted)
+           - In total there will be 4 bar graphs; one graph for each comparison us_ecig vs us_control, us_tobacco vs us_control, cn_ecig vs cn_control, cn_tobacco vs cn_control
+           - ignore the ecig vs tobacco comparison for US and CN
+  * TAKEAWAYS: 
+    - The phylum that changed the most in each cohort
+    - US = Bacteriodota
+    - CN = Bacillota (previous name: Firmicutes)
+    - The phyla are similar within each cohort
+    - DESeq results correlate with alpha diversity results
+
+* **Functional analysis**
+    - In progress
+    - Sophie had issues with running the functional analysis in the server and that’s because the way the server was set up for this term is that it has limited RAM storage and that the storage is not big enough to run the functional analysis
+    - Dr. Avril Metcalfe-Roache promised to send Sophie the functional analysis later today
+    - UPDATE: Sophie received Dr. Avril’s email and the functional analysis results at 2AM on Nov 21
+
+* **Overall project**
+    - The main storyline is that US and CN cohorts have very distinct microbiome and the effect of smoking status on those two cohorts are very different
+    - I.e. Depending on where you’re from, you’ll have different baseline and the smoking status will affect the salivary microbiome differently
+
+#### Action items
+  *  Watch Module 17 regarding presentation:
+  * Create presentation slides, including the edited plots
+    - So that we can receive feedback before our presentation submission
+  * TIPS FOR PRESENTATION SLIDES: 
+    - Keep in mind that the presentation is only 10 minutes
+    - Aim for 10 slides
+    - Don’t take too much time explaining the background
+    - Aim for 2 slides of background
+    - Slides should be a balance between text and figures
+    - Don’t write paragraphs; use point form instead
+    - The text should be the main points of the results that you want other group to address
+    - For functional analysis, include the plots only if the result is not complicated
+    - It’s not allowed to add speaker notes when making our presentation
+    - But, when we’re presenting other group’s slides, we can bring and read our notes during the presentation
+    - If the slides that we are presenting is very bad, it will affect the other group’s grade, not ours
+
 
 ### Week 6 (06-Nov-2025)
 #### Agenda

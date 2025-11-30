@@ -11,7 +11,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 - [Week 5 (30-Oct-2025)](weekly_meeting_records/week-05-30Oct2025.md)
 - [Week 6 (06-Nov-2025)](weekly_meeting_records/week-06-06Nov2025.md)
 - [Week 7 (20-Nov-2025)](weekly_meeting_records/week-07-20Nov2025.md)
-- [Week 8 (20-Nov-2025)](weekly_meeting_records/week-08-27Nov2025.md)
+- [Week 8 (27-Nov-2025)](weekly_meeting_records/week-08-27Nov2025.md)
 ---
 
 ### Folder Clarification/ Notes

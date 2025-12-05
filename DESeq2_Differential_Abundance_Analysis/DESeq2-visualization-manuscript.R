@@ -73,12 +73,16 @@ volc_within <- bind_rows(
 # 2) Faceted volcano (i.e., combined into a 2 row × 3 columns table)
 facted_within_volcano_plot <- volc_within |> 
   mutate(significant = padj<0.01 & abs(log2FoldChange)>2)  |>  
+  drop_na(significant) |>    # removes NA values from legend + plot
   ggplot(aes(x = log2FoldChange, y = -log10(padj),  col=significant)) + 
-  geom_point(alpha = 0.5, size = 1.95) +  
+  geom_point(alpha = 0.6, size = 1.95) +  
   geom_hline(yintercept = -log10(0.01), linetype = "dashed") +  
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   facet_grid(dataset ~ comparison) +
-  scale_colour_manual(values = c("FALSE" = "grey70", "TRUE" = "red")) + 
+  scale_colour_manual(
+    values = c("FALSE" = "#00BFC4", "TRUE" = "tomato1"),
+    labels = c("FALSE" = "False", "TRUE" = "True"),
+    name = "Significance") +
   xlab("Log2FoldChange") +  
   ylab("-Log10(Adjusted P-Value)") +
   ggtitle("Within-U.S.A. and Within-China DESeq2 Analysis (padj < 0.01, |log2FC| > 2)") +
@@ -89,7 +93,7 @@ facted_within_volcano_plot <- volc_within |>
     axis.title = element_text(face = "bold",  size = 13),
     panel.border = element_rect(linewidth = 2), 
     strip.text = element_text(size = 12, face = "bold", colour = "black"),
-    legend.position = "none")   # remove legend  
+    legend.position = "right")  
 facted_within_volcano_plot
 
 # Save plot 
@@ -112,12 +116,16 @@ volc_between <- bind_rows(
 # 2) Generate supplementary between-group comparison (1 row × 3 columns) volcano plot 
 facted_between_volcano_plot <- volc_between |> 
   mutate(significant = padj<0.01 & abs(log2FoldChange)>2)  |>  
+  drop_na(significant) |>    # removes NA values from legend + plot
   ggplot(aes(x = log2FoldChange, y = -log10(padj),  col=significant)) + 
-  geom_point(alpha = 0.5, size = 1.95) +  
+  geom_point(alpha = 0.4, size = 1.95) +  
   geom_hline(yintercept = -log10(0.01), linetype = "dashed") +  
   geom_vline(xintercept = c(-2, 2), linetype = "dashed") +
   facet_grid(dataset ~ comparison) +
-  scale_colour_manual(values = c("FALSE" = "grey70", "TRUE" = "red")) + 
+  scale_colour_manual(
+    values = c("FALSE" = "#00BFC4", "TRUE" = "tomato1"),
+    labels = c("FALSE" = "False", "TRUE" = "True"),
+    name = "Significance") +
   xlab("Log2FoldChange") +  
   ylab("-Log10(Adjusted P-Value)") +
   ggtitle("Between-Dataset (China vs U.S.A.) DESeq2 Analysis (padj < 0.01, |log2FC| > 2)") +
@@ -128,7 +136,7 @@ facted_between_volcano_plot <- volc_between |>
     axis.title = element_text(face = "bold",  size = 13),
     panel.border = element_rect(linewidth = 2), 
     strip.text = element_text(size = 12, face = "bold", colour = "black"),
-    legend.position = "none")    
+    legend.position = "right")    
 facted_between_volcano_plot
 
 # Save plot 
@@ -211,8 +219,8 @@ phylum_bar_facet <- ggplot(
   scale_fill_manual(
     name   = "Direction",
     values = c(
-      "Depleted" = "#C0392B",   # "#000000", black
-      "Enriched" = "#2980B9"     # "#7F7F7F" medium gray
+      "Depleted" = "#2980B9",   # "#000000", black
+      "Enriched" = "#C0392B"     # "#7F7F7F" medium gray
     )
   ) +
   xlab("Phylum") +
@@ -226,7 +234,8 @@ phylum_bar_facet <- ggplot(
     axis.text.y  = element_text(size = 10),
     strip.text   = element_text(size = 12, face = "bold"),
     panel.border = element_rect(linewidth = 1.1),
-    legend.title = element_text(face = "bold")
+    legend.title = element_text(face = "bold"), 
+    legend.position = "right"
   )
 
 phylum_bar_facet

@@ -31,7 +31,7 @@ ko <- read.delim('china/KO_metagenome_out/pred_metagenome_unstrat.tsv', row.name
 #Filter only to compare china control vs ecigs 
 
 ecig_v_cont_meta <- meta |>
-  filter(Combined %in% c("cn_ecigarettes", "cn_control"))
+  filter(Combined %in% c("cn_control", "cn_ecigarettes"))
 
 ecig_v_cont_ko <- ko |>
   select (all_of(ecig_v_cont_meta$sample_name))

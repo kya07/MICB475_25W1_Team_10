@@ -41,7 +41,8 @@ ecig_v_cont_DAA <- pathway_daa(abundance = ecig_v_cont_ko,
                                metadata = ecig_v_cont_meta,
                                group = "Combined",
                                daa_method = "LinDA",
-                               select = NULL, reference = NULL)
+                               select = NULL, reference = NULL,
+                               p_adjust_threshold = 1)
 
 #Annotate pathway results using KO to KEGG conversion 
 #Only need to run pathway_annotate once, then save it on folder (hence why its commented out)
@@ -60,11 +61,11 @@ source('ggpicrust2_errorbar_function_fixed.R')
 #first check how many hits u get, dont over annotate, change p-value and log2FoldChange if needed 
 ecig_v_cont_daa_signif <- ecig_v_cont_daa_annotated_results_df|>
   dplyr::filter (
-    p_adjust < 0.0005, 
-    abs(log2FoldChange) > 5 )
+    p_adjust < 0.2, 
+    abs(log2FoldChange) > 1 )
 
 ##if I do >4 is 81, >5 is 13 
-#nrow(ecig_v_cont_daa_signif)
+nrow(ecig_v_cont_daa_signif)
 
 ecig_v_cont_peb <- pathway_errorbar_fixed(abundance = ecig_v_cont_ko, 
                                           daa_results_df = ecig_v_cont_daa_signif, 

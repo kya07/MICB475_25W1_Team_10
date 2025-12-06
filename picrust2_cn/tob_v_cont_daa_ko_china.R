@@ -31,7 +31,7 @@ ko <- read.delim('china/KO_metagenome_out/pred_metagenome_unstrat.tsv', row.name
 #Filter only to compare china control vs tobacco 
 
 tob_v_cont_meta <- meta |>
-  filter(Combined %in% c("cn_tobacco", "cn_control"))
+  filter(Combined %in% c("cn_control", "cn_tobacco"))
 
 tob_v_cont_ko <- ko |>
   select (all_of(tob_v_cont_meta$sample_name))
@@ -46,8 +46,8 @@ tob_v_cont_DAA <- pathway_daa(abundance = tob_v_cont_ko,
 #Annotate pathway results using KO to KEGG conversion 
 #Only need to run pathway_annotate once, then save it on folder (hence why its commented out)
 tob_v_cont_daa_annotated_results_df <- pathway_annotation(pathway = "KO", 
-daa_results_df = tob_v_cont_DAA, 
-ko_to_kegg = TRUE)
+  daa_results_df = tob_v_cont_DAA, 
+  ko_to_kegg = TRUE)
 
 saveRDS(tob_v_cont_daa_annotated_results_df, 'cn_tob_v_cont_results/tob_v_cont_daa_annotated_results_df.rds')
 
@@ -71,7 +71,7 @@ tob_v_cont_peb <- pathway_errorbar_fixed(abundance = tob_v_cont_ko,
                                           Group = tob_v_cont_meta$Combined, 
                                           wrap_label = T, wraplength=60,
                                           fc_cutoff = 5, order_by_log = F,
-                                          p_values_threshold = 0.0005, 
+                                          p_values_threshold = 0.0000001, 
                                           order = "pathway_class", 
                                           ko_to_kegg = TRUE, 
                                           p_value_bar = TRUE, 

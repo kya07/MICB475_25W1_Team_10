@@ -45,27 +45,53 @@ tob_v_cont_DAA <- pathway_daa(abundance = tob_v_cont_ko,
 
 #Annotate pathway results using KO to KEGG conversion 
 #Only need to run pathway_annotate once, then save it on folder (hence why its commented out)
-tob_v_cont_daa_annotated_results_df <- pathway_annotation(pathway = "KO", 
-  daa_results_df = tob_v_cont_DAA, 
-  ko_to_kegg = TRUE)
+#tob_v_cont_daa_annotated_results_df <- pathway_annotation(pathway = "KO", 
+ # daa_results_df = tob_v_cont_DAA, 
+  #ko_to_kegg = TRUE)
 
-saveRDS(tob_v_cont_daa_annotated_results_df, 'cn_tob_v_cont_results/tob_v_cont_daa_annotated_results_df.rds')
+#saveRDS(tob_v_cont_daa_annotated_results_df, 'cn_tob_v_cont_results/tob_v_cont_daa_annotated_results_df.rds')
 
 tob_v_cont_daa_annotated_results_df = readRDS('cn_tob_v_cont_results/tob_v_cont_daa_annotated_results_df.rds')
 
-##Generate pathway error bar plot
-#Loading R script provided by Avril withthe fixed version for plotting errorbars
-source('ggpicrust2_errorbar_function_fixed.R')
+
+####doing bar plots like DESEQ
 
 #first check how many hits u get, dont over annotate, change p-value and log2FoldChange if needed --> have to edit each of the codes for this one 
 tob_v_cont_daa_signif <- tob_v_cont_daa_annotated_results_df|>
   dplyr::filter (
-    p_adjust < 0.0000001, 
+    p_adjust < 0.0000005, 
     abs(log2FoldChange) > 5 )
 
 ##if I do >4 is 81, >5 is 13 
 nrow(tob_v_cont_daa_signif)
+data_bar_plot <- ecig_v_cont_daa_signif %>%
+  mutate(pathway_name = ifelse(is.na(pathway_name) | pathway_name == "",
+                               "Unknown",
+                               pathway_name)) %>%
+  arrange(log2FoldChange)
+#%>%
+# mutate(pathway_name = factor(pathway_name, levels = unique(pathway_name))) 
 
+
+bar_plot <-ggplot(data_bar_plot, aes(x = pathway_name, y = log2FoldChange,
+                                     fill = log2FoldChange > 0)) +
+  geom_col(position = position_dodge(width = 0.9)) +
+  coord_flip() +
+  scale_fill_manual(values = c( "blue", "red"),
+                    labels = c("Increased", "Decreased")) +
+  labs(title = "KO Functional Changes by Pathway in Tobacco smokers in China",
+       x = "Pathway",
+       y = "Log2 Fold Change in respect to control",
+       fill = "") +
+  theme_classic(base_size = 12) +
+  theme(axis.text.y = element_text(size = 10))
+
+
+
+
+
+#Loading R script provided by Avril withthe fixed version for plotting errorbars
+source('ggpicrust2_errorbar_function_fixed.R')
 tob_v_cont_peb <- pathway_errorbar_fixed(abundance = tob_v_cont_ko, 
                                           daa_results_df = tob_v_cont_daa_signif, 
                                           Group = tob_v_cont_meta$Combined, 

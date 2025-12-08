@@ -53,18 +53,51 @@ ecig_v_cont_DAA <- pathway_daa(abundance = ecig_v_cont_ko,
 
 ecig_v_cont_daa_annotated_results_df = readRDS('cn_ecigs_v_cont_results/ecig_v_cont_daa_annotated_results_df.rds')
 
-##Generate pathway error bar plot
-#Loading R script provided by Avril withthe fixed version for plotting errorbars
-source('ggpicrust2_errorbar_function_fixed.R')
-
 #first check how many hits u get, dont over annotate, change p-value and log2FoldChange if needed 
 ecig_v_cont_daa_signif <- ecig_v_cont_daa_annotated_results_df|>
   dplyr::filter (
-    p_adjust < 0.0005, 
+    p_adjust < 0.001, 
     abs(log2FoldChange) > 5 )
 
 ##if I do >4 is 81, >5 is 13 
-  #nrow(ecig_v_cont_daa_signif)
+nrow(ecig_v_cont_daa_signif)
+
+###PLoting similarly to DESEQ
+
+data_bar_plot <- ecig_v_cont_daa_signif %>%
+  mutate(pathway_name = ifelse(is.na(pathway_name) | pathway_name == "",
+                               "Unknown",
+                               pathway_name)) %>%
+  arrange(log2FoldChange)
+#%>%
+ # mutate(pathway_name = factor(pathway_name, levels = unique(pathway_name))) 
+
+
+bar_plot <-ggplot(data_bar_plot, aes(x = pathway_name, y = log2FoldChange,
+               fill = log2FoldChange > 0)) +
+  geom_col(position = position_dodge(width = 0.9)) +
+  coord_flip() +
+  scale_fill_manual(values = c("red", "blue"),
+                    labels = c("Decreased", "Increased")) +
+  labs(title = "KO Functional Changes by Pathway in E-cigarette smokers in China",
+       x = "Pathway",
+       y = "Log2 Fold Change in respect to control",
+       fill = "") +
+  theme_classic(base_size = 12) +
+  theme(axis.text.y = element_text(size = 10))
+
+
+
+
+
+
+
+
+
+##Generate pathway error bar plot --> now well gnerated hence barplots above were made
+
+#Loading R script provided by Dr. Avril with the fixed version for plotting errorbars
+source('ggpicrust2_errorbar_function_fixed.R')
 
 ecig_v_cont_peb <- pathway_errorbar_fixed(abundance = ecig_v_cont_ko, 
                                          daa_results_df = ecig_v_cont_daa_signif, 

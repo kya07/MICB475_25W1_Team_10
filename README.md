@@ -24,7 +24,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 #### R/RStudio
 - **Phyloseq Object Creation and Merging:** [ China phyloseq object](./cn_phyloseq_object/),  [USA phyloseq object](./us_phyloseq_objects/), and [Merged China + USA object](./merged_cn_us_phyloseq_object/)
 - **Analyses:**
-  - [Alpha/Beta diversity](./Diversity_Metrics_Analysis/)
+  - [Diversity Metrics](./Diversity_Metrics_Analysis/)
   - [Differential abundance analysis](./DESeq2_Differential_Abundance_Analysis/)
   - [Indicator species analysis](./Indicator%20Species%20Analysis/)
   - [Functional analysis- China cohort](./picrust2_cn/) and [Functional analysis -USA cohort](./picrust2_us/)

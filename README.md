@@ -15,7 +15,16 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 - [Week 9 (04-Dec-2025)](weekly_meeting_records/week-09-04Dec2025.md)
 
 ---
+### Table of Contents
+#### QIIME2 Pipeline
+- **Metadata processing:** [metadata](./metadata/)
+- **China cohort:** [workflow](./qiime2_cn/) and [results](./qiime2_cn_export/)
+- **U.S.A cohort:** [workflow and results](./qiime_pipeline_uk/)
 
-### Folder Clarification/ Notes
-* Add in notes if applicable. 
-
+#### R/RStudio
+- **Phyloseq Object Creation and Merging:** [ China phyloseq object](./cn_phyloseq_object/),  [USA phyloseq objects](./us_phyloseq_objects/), and [Merged China + USA object](./merged_cn_us_phyloseq_object/)
+- **Analyses:**
+  - [Alpha/Beta diversity](./Diversity_Metrics_Analysis/)
+  - [Differential abundance analysis](./DESeq2_Differential_Abundance_Analysis/)
+  - [Indicator species analysis](./Indicator%20Species%20Analysis/)
+  - [Functional analysis- China cohort](./picrust2_cn/) and [Functional analysis -USA cohort](./picrust2_us/)

@@ -22,7 +22,7 @@ Agendas are posted before each meeting for mentor review, and minutes are added 
 - **U.S.A cohort:** [workflow and results](./qiime_pipeline_uk/)
 
 #### R/RStudio
-- **Phyloseq Object Creation and Merging:** [ China phyloseq object](./cn_phyloseq_object/),  [USA phyloseq objects](./us_phyloseq_objects/), and [Merged China + USA object](./merged_cn_us_phyloseq_object/)
+- **Phyloseq Object Creation and Merging:** [ China phyloseq object](./cn_phyloseq_object/),  [USA phyloseq object](./us_phyloseq_objects/), and [Merged China + USA object](./merged_cn_us_phyloseq_object/)
 - **Analyses:**
   - [Alpha/Beta diversity](./Diversity_Metrics_Analysis/)
   - [Differential abundance analysis](./DESeq2_Differential_Abundance_Analysis/)

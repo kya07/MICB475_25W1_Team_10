@@ -1,0 +1,34 @@
+sample-id	Public description	Organism	Host	Isolation source	Collection date	Geographic location	Latitude longitude	Description	Cohort	Combined
+E1	E-cigarettes smoking 1	human oral metagenome	Homo sapiens	saliva	2019-06-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	ecigarettes	cn	cn_ecigarettes
+E2	E-cigarettes smoking 2	human oral metagenome	Homo sapiens	saliva	2019-06-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	ecigarettes	cn	cn_ecigarettes
+E3	E-cigarettes smoking 3	human oral metagenome	Homo sapiens	saliva	2019-06-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	ecigarettes	cn	cn_ecigarettes
+E4	E-cigarettes smoking 4	human oral metagenome	Homo sapiens	saliva	2019-06-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	ecigarettes	cn	cn_ecigarettes
+E5	E-cigarettes smoking 5	human oral metagenome	Homo sapiens	saliva	2019-06-28T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	ecigarettes	cn	cn_ecigarettes
+S1	Common tobacco smoking 1	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S2	Common tobacco smoking 2	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S3	Common tobacco smoking 3	human oral metagenome	Homo sapiens	saliva	2019-07-04T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S4	Common tobacco smoking 4	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S5	Common tobacco smoking 5	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S6	Common tobacco smoking 6	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S7	Common tobacco smoking 7	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S8	Common tobacco smoking 8	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S9	Common tobacco smoking 9	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S10	Common tobacco smoking 10	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S11	Common tobacco smoking 11	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S12	Common tobacco smoking 12	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S13	Common tobacco smoking 13	human oral metagenome	Homo sapiens	saliva	2019-07-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+S14	Common tobacco smoking 14	human oral metagenome	Homo sapiens	saliva	2019-08-02T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	tobacco	cn	cn_tobacco
+NS1	Non-smoking 1	human oral metagenome	Homo sapiens	saliva	2019-06-28T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	control	cn	cn_control
+NS2	Non-smoking 2	human oral metagenome	Homo sapiens	saliva	2019-06-13T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	control	cn	cn_control
+NS3	Non-smoking 3	human oral metagenome	Homo sapiens	saliva	2019-05-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	control	cn	cn_control
+NS4	Non-smoking 4	human oral metagenome	Homo sapiens	saliva	2019-05-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	control	cn	cn_control
+NS5	Non-smoking 5	human oral metagenome	Homo sapiens	saliva	2019-05-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	control	cn	cn_control
+NS6	Non-smoking 6	human oral metagenome	Homo sapiens	saliva	2019-05-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	control	cn	cn_control
+QS1	Quitting smoking with tobacco 1	human oral metagenome	Homo sapiens	saliva	2019-08-02T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	NA	cn	cn_NA
+QS2	Quitting smoking with tobacco 2	human oral metagenome	Homo sapiens	saliva	2019-08-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	NA	cn	cn_NA
+QS3	Quitting smoking with tobacco 3	human oral metagenome	Homo sapiens	saliva	2019-08-01T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	NA	cn	cn_NA
+QS4	Quitting smoking with tobacco 4	human oral metagenome	Homo sapiens	saliva	2019-07-04T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	NA	cn	cn_NA
+QS5	Quitting smoking with tobacco 5	human oral metagenome	Homo sapiens	saliva	2019-07-04T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	NA	cn	cn_NA
+QS6	Quitting smoking with tobacco 6	human oral metagenome	Homo sapiens	saliva	2019-07-04T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	NA	cn	cn_NA
+QS7	Quitting smoking with tobacco 7	human oral metagenome	Homo sapiens	saliva	2019-07-04T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	NA	cn	cn_NA
+QS8	Quitting smoking with tobacco 8	human oral metagenome	Homo sapiens	saliva	2019-05-30T00:00:00Z	China:KunMing,Yunnan	25.05 N 102.82 E	NA	cn	cn_NA
